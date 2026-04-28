@@ -1,0 +1,47 @@
+@model IEnumerable<Inventario.MODEL.Producto>
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<h1>Catálogo de Productos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Agregar Producto</a>
+</p>
+
+@if (!Model?.Any() ?? true)
+{
+    <div class="alert alert-info">No hay productos registrados.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Fecha de Ingreso</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@String.Format("{0:C0}", item.Precio)</td>
+                <td>@item.Categoria</td>
+                <td>@item.FechaIngreso.ToString("g")</td>
+                <td>@(item.Activo ? "Activo" : "Inactivo")</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
