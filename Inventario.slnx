@@ -2,7 +2,6 @@
   <Project Path="Inventario.BL/Inventario.BL.csproj" />
   <Project Path="Inventario.DA/Inventario.DA.csproj" Id="8778f394-c129-4685-bb06-d19b95ded1d2" />
   <Project Path="Inventario.MODEL/Inventario.MODEL.csproj" />
-  <Project Path="Inventario.UI/Inventario.UI.csproj" />
   <Project Path="Inventario2.Test/Inventario2.Test.csproj" Id="56fb4c4e-6094-4b53-bae6-d878e40a36c4" />
   <Project Path="ProductoInventario/ProductoInventario.csproj" Id="b79a9020-eee3-44cb-b45d-631aaa9d258b" />
 </Solution>
